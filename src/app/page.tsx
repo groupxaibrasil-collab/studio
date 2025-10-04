@@ -1,3 +1,4 @@
+import { getI18n } from '@/locales/index.server';
 import Image from 'next/image';
 import Link from 'next/link';
 import {
@@ -134,7 +135,8 @@ const securityFeatures = [
 
 const blogPosts = PlaceHolderImages.filter(img => img.id.includes('blog-post')).slice(0, 3);
 
-export default function Home() {
+export default async function Home() {
+  const t = await getI18n();
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
@@ -146,23 +148,17 @@ export default function Home() {
           <div className="absolute inset-0 bg-grid-slate-700/[0.04] bg-[10px_10px] [mask-image:linear-gradient(to_bottom,white,transparent)] dark:bg-grid-slate-200/[0.04]"></div>
           <div className="container relative mx-auto px-4 text-center">
             <h1 className="font-headline text-4xl font-bold tracking-tight text-foreground sm:text-6xl">
-              Bring Your Story to Life with the <br /> Power of{' '}
-              <span className="text-primary">Artificial Intelligence.</span>
+              {t('hero.title')}
             </h1>
             <p className="mt-6 text-lg leading-8 text-muted-foreground">
-              The definitive platform for writers, screenwriters, and comic book
-              artists.
-              <br />
-              A space where text and art unite, driven by intelligent tools,
-              dynamic collaboration, and full support to turn ideas into
-              unforgettable works.
+              {t('hero.subtitle')}
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Button asChild size="lg" className="shadow-[0_0_10px_theme(colors.primary.DEFAULT),_0_0_20px_theme(colors.primary.DEFAULT)]">
-                <Link href="/register">Start a Free Project</Link>
+                <Link href="/register">{t('hero.cta.primary')}</Link>
               </Button>
               <Button asChild size="lg" variant="secondary">
-                <Link href="#features">View Features &rarr;</Link>
+                <Link href="#features">{t('hero.cta.secondary')} &rarr;</Link>
               </Button>
             </div>
           </div>

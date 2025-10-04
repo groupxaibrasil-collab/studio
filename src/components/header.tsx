@@ -5,12 +5,15 @@ import { Button } from './ui/button';
 import { CineWriteIcon } from './icons';
 import { ThemeToggle } from './theme-toggle';
 import { LanguageSwitcher } from './language-switcher';
+import { useI18n } from '@/locales/client';
 
 export function Header() {
+  const t = useI18n();
+
   const navLinks = [
-    { href: '#features', label: 'Tools' },
-    { href: '#blog', label: 'Blog' },
-    { href: '#pricing', label: 'Pricing' },
+    { href: '#features', label: t('header.tools') },
+    { href: '#blog', label: t('header.blog') },
+    { href: '#pricing', label: t('header.pricing') },
   ];
 
   return (
@@ -39,10 +42,10 @@ export function Header() {
           <LanguageSwitcher />
           <ThemeToggle />
           <Button variant="secondary" asChild>
-            <Link href="/login">Login</Link>
+            <Link href="/login">{t('header.login')}</Link>
           </Button>
           <Button asChild>
-            <Link href="/register">Get Started</Link>
+            <Link href="/register">{t('header.get-started')}</Link>
           </Button>
         </div>
       </div>

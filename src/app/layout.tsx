@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { ThemeProvider } from '@/components/theme-provider';
+import { I18nProvider } from '@/i18n';
+import { getCurrentLocale } from '@/i18n/index.server';
 
 export const metadata: Metadata = {
   title: 'CineWrite AI',
@@ -14,8 +16,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = getCurrentLocale();
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -35,7 +38,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <I18nProvider locale={locale}>
+            {children}
+          </I18nProvider>
           <Toaster />
         </ThemeProvider>
       </body>

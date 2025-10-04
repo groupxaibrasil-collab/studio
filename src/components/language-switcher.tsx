@@ -8,6 +8,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { Button } from './ui/button';
 import { Languages } from 'lucide-react';
+import { useChangeLocale, useCurrentLocale } from '@/locales/client';
 
 const languages = [
   { code: 'pt', name: 'Português' },
@@ -22,6 +23,9 @@ const languages = [
 ];
 
 export function LanguageSwitcher() {
+  const changeLocale = useChangeLocale();
+  const locale = useCurrentLocale();
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -31,7 +35,13 @@ export function LanguageSwitcher() {
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         {languages.map((lang) => (
-          <DropdownMenuItem key={lang.code}>{lang.name}</DropdownMenuItem>
+          <DropdownMenuItem
+            key={lang.code}
+            onSelect={() => changeLocale(lang.code as 'pt' | 'en' | 'es' | 'it' | 'fr' | 'de' | 'ru' | 'ja' | 'zh')}
+            className={locale === lang.code ? 'bg-accent' : ''}
+          >
+            {lang.name}
+          </DropdownMenuItem>
         ))}
       </DropdownMenuContent>
     </DropdownMenu>
