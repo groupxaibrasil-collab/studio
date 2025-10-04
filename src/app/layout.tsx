@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { ThemeProvider } from '@/components/theme-provider';
-import { I18nProvider } from '@/i18n';
-import { getCurrentLocale } from '@/i18n/index.server';
+import { I18nProviderClient } from '@/locales/client';
+import { getCurrentLocale } from '@/locales/index.server';
 
 export const metadata: Metadata = {
   title: 'CineWrite AI',
@@ -38,9 +38,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <I18nProvider locale={locale}>
+          <I18nProviderClient locale={locale}>
             {children}
-          </I18nProvider>
+          </I18nProviderClient>
           <Toaster />
         </ThemeProvider>
       </body>
