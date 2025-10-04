@@ -8,7 +8,7 @@ export function Footer() {
         <div className="flex items-center gap-2">
           <CineWriteIcon className="h-6 w-6" />
           <p className="text-sm text-muted-foreground">
-            © 2025 CineWrite X AI – All rights reserved.
+            © 2025 CineWrite <span style={{ color: '#FF0000' }}>X</span> AI – All rights reserved.
           </p>
         </div>
         <div className="flex flex-col items-center gap-2 text-sm text-muted-foreground sm:flex-row sm:gap-4">
@@ -20,7 +20,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Group X AI Brasil
+              Group <span style={{ color: '#FF0000' }}>X</span> AI Brasil
             </a>
           </p>
           <div className="hidden h-4 w-px bg-border sm:block" />

@@ -23,7 +23,7 @@ export function Header() {
           <Link href="/" className="mr-6 flex items-center space-x-2">
             <CineWriteIcon className="h-6 w-6" />
             <span className="font-bold sm:inline-block font-headline">
-              CineWrite X AI
+              CineWrite <span style={{ color: '#FF0000' }}>X</span> AI
             </span>
           </Link>
           <nav className="hidden gap-6 text-sm md:flex">
