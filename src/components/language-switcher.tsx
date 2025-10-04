@@ -1,0 +1,39 @@
+'use client';
+
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import { Button } from './ui/button';
+import { Languages } from 'lucide-react';
+
+const languages = [
+  { code: 'pt', name: 'Português' },
+  { code: 'en', name: 'English' },
+  { code: 'es', name: 'Español' },
+  { code: 'it', name: 'Italiano' },
+  { code: 'fr', name: 'Français' },
+  { code: 'de', name: 'Deutsch' },
+  { code: 'ru', name: 'Русский' },
+  { code: 'ja', name: '日本語' },
+  { code: 'zh', name: '中文' },
+];
+
+export function LanguageSwitcher() {
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="ghost" size="icon">
+          <Languages className="h-5 w-5" />
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent>
+        {languages.map((lang) => (
+          <DropdownMenuItem key={lang.code}>{lang.name}</DropdownMenuItem>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+}
