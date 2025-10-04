@@ -1,7 +1,7 @@
 'use client';
 import { createContext, useContext, type ReactNode } from 'react';
 import { type FirebaseApp } from 'firebase/app';
-import { type Auth }reac
+import { type Auth } from 'firebase/auth';
 import { type Firestore } from 'firebase/firestore';
 
 const FirebaseContext = createContext<{
