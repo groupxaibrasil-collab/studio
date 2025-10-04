@@ -62,9 +62,6 @@ export default {
   // Pricing Section
   "pricing.title": "Pläne und Abonnements",
   "pricing.subtitle": "Wählen Sie den perfekten Plan, um Ihre Kreativität zu entfesseln.",
-  "pricing.table.plan": "Plan",
-  "pricing.table.value": "Wert",
-  "pricing.table.benefits": "Vorteile",
   "pricing.mostPopular": "Am beliebtesten",
   "plans.free.name": "Kostenlos",
   "plans.free.credits": "500 Credits/Monat",
@@ -103,5 +100,23 @@ export default {
   "blog.posts.post2.title": "Die Geheimnisse erfolgreichen Drehbuchschreibens entschlüsseln",
   "blog.posts.post2.description": "Ein tiefer Einblick in die Erzählstrukturen, die das Publikum fesseln.",
   "blog.posts.post3.title": "Ihre einzigartige Stimme als Schriftsteller finden",
-  "blog.posts.post3.description": "Tipps und Übungen zur Entwicklung eines unverwechselbaren und authentischen Schreibstils."
+  "blog.posts.post3.description": "Tipps und Übungen zur Entwicklung eines unverwechselbaren und authentischen Schreibstils.",
+  
+  // Footer
+  "footer.initiative": "Eine Initiative der Group X AI Brasil. Entwickelt in Brasilien.",
+  "footer.navigate.title": "Navigieren",
+  "footer.navigate.features": "Funktionen",
+  "footer.navigate.plans": "Pläne",
+  "footer.partnerships.title": "Partnerschaften",
+  "footer.partnerships.content": "Werden Sie Content-Partner",
+  "footer.partnerships.print": "Werden Sie Druckpartner",
+  "footer.partnerships.education": "Für Bildungseinrichtungen",
+  "footer.legal.title": "Rechtliches",
+  "footer.legal.terms": "Nutzungsbedingungen",
+  "footer.legal.privacy": "Datenschutzrichtlinie",
+  "footer.legal.printing": "Druckdienste",
+  "footer.about.title": "Über uns",
+  "footer.about.about": "Über",
+  "footer.about.support": "Unterstützen Sie das Projekt",
+  "footer.copyright": "© 2025 CineWrite X AI – Alle Rechte vorbehalten."
 } as const;

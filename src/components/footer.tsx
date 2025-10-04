@@ -1,7 +1,9 @@
 import Link from 'next/link';
 import { CineWriteIcon } from './icons';
+import { getI18n } from '@/locales/index.server';
 
-export function Footer() {
+export async function Footer() {
+  const t = await getI18n();
   return (
     <footer className="border-t bg-background">
       <div className="container mx-auto px-4 py-12 md:px-6">
@@ -15,56 +17,56 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-sm text-muted-foreground">
-              An initiative of Group <span style={{ color: '#FF0000' }}>X</span> AI Brasil. Developed in Brazil.
+              {t('footer.initiative')}
             </p>
           </div>
 
           {/* Coluna 2: Navigate */}
           <div>
-            <h3 className="mb-4 font-semibold text-foreground">Navigate</h3>
+            <h3 className="mb-4 font-semibold text-foreground">{t('footer.navigate.title')}</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="#features" className="hover:text-primary">Features</Link></li>
-              <li><Link href="#features" className="hover:text-primary">Tools</Link></li>
-              <li><Link href="#pricing" className="hover:text-primary">Plans</Link></li>
-              <li><Link href="#blog" className="hover:text-primary">Blog</Link></li>
-              <li><Link href="/login" className="hover:text-primary">Login</Link></li>
-              <li><Link href="/register" className="hover:text-primary">Get Started</Link></li>
+              <li><Link href="#features" className="hover:text-primary">{t('footer.navigate.features')}</Link></li>
+              <li><Link href="#features" className="hover:text-primary">{t('header.tools')}</Link></li>
+              <li><Link href="#pricing" className="hover:text-primary">{t('footer.navigate.plans')}</Link></li>
+              <li><Link href="#blog" className="hover:text-primary">{t('header.blog')}</Link></li>
+              <li><Link href="/login" className="hover:text-primary">{t('header.login')}</Link></li>
+              <li><Link href="/register" className="hover:text-primary">{t('header.get-started')}</Link></li>
             </ul>
           </div>
 
           {/* Coluna 3: Partnerships */}
           <div>
-            <h3 className="mb-4 font-semibold text-foreground">Partnerships</h3>
+            <h3 className="mb-4 font-semibold text-foreground">{t('footer.partnerships.title')}</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="#" className="hover:text-primary">Become a Content Partner</Link></li>
-              <li><Link href="#" className="hover:text-primary">Become a Print Partner</Link></li>
-              <li><Link href="#education" className="hover:text-primary">For Educational Institutions</Link></li>
+              <li><Link href="#" className="hover:text-primary">{t('footer.partnerships.content')}</Link></li>
+              <li><Link href="#" className="hover:text-primary">{t('footer.partnerships.print')}</Link></li>
+              <li><Link href="#education" className="hover:text-primary">{t('footer.partnerships.education')}</Link></li>
             </ul>
           </div>
 
           {/* Coluna 4: Legal */}
           <div>
-            <h3 className="mb-4 font-semibold text-foreground">Legal</h3>
+            <h3 className="mb-4 font-semibold text-foreground">{t('footer.legal.title')}</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="#" className="hover:text-primary">Terms of Service</Link></li>
-              <li><Link href="#" className="hover:text-primary">Privacy Policy</Link></li>
-              <li><Link href="#" className="hover:text-primary">Printing Services</Link></li>
+              <li><Link href="#" className="hover:text-primary">{t('footer.legal.terms')}</Link></li>
+              <li><Link href="#" className="hover:text-primary">{t('footer.legal.privacy')}</Link></li>
+              <li><Link href="#" className="hover:text-primary">{t('footer.legal.printing')}</Link></li>
             </ul>
           </div>
 
           {/* Coluna 5: About Us */}
           <div>
-            <h3 className="mb-4 font-semibold text-foreground">About Us</h3>
+            <h3 className="mb-4 font-semibold text-foreground">{t('footer.about.title')}</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="#" className="hover:text-primary">About</Link></li>
+              <li><Link href="#" className="hover:text-primary">{t('footer.about.about')}</Link></li>
               <li><a href="mailto:service@groupxai.com.br" className="hover:text-primary">service@groupxai.com.br</a></li>
-              <li><Link href="#" className="hover:text-primary">Support the Project</Link></li>
+              <li><Link href="#" className="hover:text-primary">{t('footer.about.support')}</Link></li>
             </ul>
           </div>
         </div>
 
         <div className="mt-12 border-t pt-8 text-center text-sm text-muted-foreground">
-          <p>© 2025 CineWrite <span style={{ color: '#FF0000' }}>X</span> AI – All rights reserved.</p>
+          <p>{t('footer.copyright')}</p>
         </div>
       </div>
     </footer>

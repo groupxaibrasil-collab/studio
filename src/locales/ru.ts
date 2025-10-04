@@ -62,9 +62,6 @@ export default {
   // Pricing Section
   "pricing.title": "Планы и подписки",
   "pricing.subtitle": "Выберите идеальный план, чтобы раскрыть свой творческий потенциал.",
-  "pricing.table.plan": "План",
-  "pricing.table.value": "Стоимость",
-  "pricing.table.benefits": "Преимущества",
   "pricing.mostPopular": "Самый популярный",
   "plans.free.name": "Бесплатный",
   "plans.free.credits": "500 кредитов/месяц",
@@ -103,5 +100,23 @@ export default {
   "blog.posts.post2.title": "Раскрытие секретов успешного сценария",
   "blog.posts.post2.description": "Глубокое погружение в повествовательные структуры, которые увлекают аудиторию.",
   "blog.posts.post3.title": "Поиск своего уникального голоса как писателя",
-  "blog.posts.post3.description": "Советы и упражнения для развития особого и аутентичного стиля письма."
+  "blog.posts.post3.description": "Советы и упражнения для развития особого и аутентичного стиля письма.",
+
+  // Footer
+  "footer.initiative": "Инициатива Group X AI Brasil. Разработано в Бразилии.",
+  "footer.navigate.title": "Навигация",
+  "footer.navigate.features": "Функции",
+  "footer.navigate.plans": "Планы",
+  "footer.partnerships.title": "Партнерство",
+  "footer.partnerships.content": "Стать контент-партнером",
+  "footer.partnerships.print": "Стать партнером по печати",
+  "footer.partnerships.education": "Для учебных заведений",
+  "footer.legal.title": "Юридическая информация",
+  "footer.legal.terms": "Условия предоставления услуг",
+  "footer.legal.privacy": "Политика конфиденциальности",
+  "footer.legal.printing": "Услуги печати",
+  "footer.about.title": "О нас",
+  "footer.about.about": "О нас",
+  "footer.about.support": "Поддержать проект",
+  "footer.copyright": "© 2025 CineWrite X AI – Все права защищены."
 } as const;

@@ -62,9 +62,6 @@ export default {
   // Pricing Section
   "pricing.title": "Plans and Subscriptions",
   "pricing.subtitle": "Choose the perfect plan to unleash your creativity.",
-  "pricing.table.plan": "Plan",
-  "pricing.table.value": "Value",
-  "pricing.table.benefits": "Benefits",
   "pricing.mostPopular": "Most Popular",
   "plans.free.name": "Free",
   "plans.free.credits": "500 credits/month",
@@ -103,5 +100,23 @@ export default {
   "blog.posts.post2.title": "Unlocking the Secrets of Successful Screenwriting",
   "blog.posts.post2.description": "A deep dive into the narrative structures that captivate audiences.",
   "blog.posts.post3.title": "Finding Your Unique Voice as a Writer",
-  "blog.posts.post3.description": "Tips and exercises for developing a distinct and authentic writing style."
+  "blog.posts.post3.description": "Tips and exercises for developing a distinct and authentic writing style.",
+
+  // Footer
+  "footer.initiative": "An initiative of Group X AI Brasil. Developed in Brazil.",
+  "footer.navigate.title": "Navigate",
+  "footer.navigate.features": "Features",
+  "footer.navigate.plans": "Plans",
+  "footer.partnerships.title": "Partnerships",
+  "footer.partnerships.content": "Become a Content Partner",
+  "footer.partnerships.print": "Become a Print Partner",
+  "footer.partnerships.education": "For Educational Institutions",
+  "footer.legal.title": "Legal",
+  "footer.legal.terms": "Terms of Service",
+  "footer.legal.privacy": "Privacy Policy",
+  "footer.legal.printing": "Printing Services",
+  "footer.about.title": "About Us",
+  "footer.about.about": "About",
+  "footer.about.support": "Support the Project",
+  "footer.copyright": "© 2025 CineWrite X AI – All rights reserved."
 } as const;

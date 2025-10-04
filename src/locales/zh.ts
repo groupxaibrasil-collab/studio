@@ -62,9 +62,6 @@ export default {
   // Pricing Section
   "pricing.title": "计划和订阅",
   "pricing.subtitle": "选择完美的计划来释放您的创造力。",
-  "pricing.table.plan": "计划",
-  "pricing.table.value": "价值",
-  "pricing.table.benefits": "好处",
   "pricing.mostPopular": "最受欢迎的",
   "plans.free.name": "自由",
   "plans.free.credits": "500 积分/月",
@@ -103,5 +100,23 @@ export default {
   "blog.posts.post2.title": "解开成功编剧的秘密",
   "blog.posts.post2.description": "深入探讨吸引观众的叙事结构。",
   "blog.posts.post3.title": "作为一名作家，找到自己独特的声音",
-  "blog.posts.post3.description": "培养独特而真实的写作风格的技巧和练习。"
+  "blog.posts.post3.description": "培养独特而真实的写作风格的技巧和练习。",
+
+  // Footer
+  "footer.initiative": "巴西X AI集团的一项举措。在巴西开发。",
+  "footer.navigate.title": "导航",
+  "footer.navigate.features": "特征",
+  "footer.navigate.plans": "计划",
+  "footer.partnerships.title": "伙伴关系",
+  "footer.partnerships.content": "成为内容合作伙伴",
+  "footer.partnerships.print": "成为印刷合作伙伴",
+  "footer.partnerships.education": "对于教育机构",
+  "footer.legal.title": "合法的",
+  "footer.legal.terms": "服务条款",
+  "footer.legal.privacy": "隐私政策",
+  "footer.legal.printing": "印刷服务",
+  "footer.about.title": "关于我们",
+  "footer.about.about": "关于",
+  "footer.about.support": "支持项目",
+  "footer.copyright": "© 2025 CineWrite X AI – 版权所有。"
 } as const;

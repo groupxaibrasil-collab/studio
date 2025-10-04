@@ -62,9 +62,6 @@ export default {
   // Pricing Section
   "pricing.title": "プランとサブスクリプション",
   "pricing.subtitle": "あなたの創造性を解き放つ完璧なプランを選択してください。",
-  "pricing.table.plan": "プラン",
-  "pricing.table.value": "価値",
-  "pricing.table.benefits": "利点",
   "pricing.mostPopular": "最も人気のある",
   "plans.free.name": "無料",
   "plans.free.credits": "500クレジット/月",
@@ -103,5 +100,23 @@ export default {
   "blog.posts.post2.title": "成功する脚本の秘密を解き明かす",
   "blog.posts.post2.description": "観客を魅了する物語の構造についての深い掘り下げ。",
   "blog.posts.post3.title": "作家として独自の声を見つける",
-  "blog.posts.post3.description": "独特で本物のライティングスタイルを開発するためのヒントと演習。"
+  "blog.posts.post3.description": "独特で本物のライティングスタイルを開発するためのヒントと演習。",
+
+  // Footer
+  "footer.initiative": "グループX AIブラジルのイニシアチブ。ブラジルで開発されました。",
+  "footer.navigate.title": "ナビゲート",
+  "footer.navigate.features": "特徴",
+  "footer.navigate.plans": "プラン",
+  "footer.partnerships.title": "パートナーシップ",
+  "footer.partnerships.content": "コンテンツパートナーになる",
+  "footer.partnerships.print": "プリントパートナーになる",
+  "footer.partnerships.education": "教育機関向け",
+  "footer.legal.title": "法的",
+  "footer.legal.terms": "利用規約",
+  "footer.legal.privacy": "プライバシーポリシー",
+  "footer.legal.printing": "印刷サービス",
+  "footer.about.title": "私たちについて",
+  "footer.about.about": "約",
+  "footer.about.support": "プロジェクトをサポートする",
+  "footer.copyright": "© 2025 CineWrite X AI – 全著作権所有。"
 } as const;

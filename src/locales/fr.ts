@@ -62,9 +62,6 @@ export default {
   // Pricing Section
   "pricing.title": "Plans et Abonnements",
   "pricing.subtitle": "Choisissez le plan parfait pour libérer votre créativité.",
-  "pricing.table.plan": "Plan",
-  "pricing.table.value": "Valeur",
-  "pricing.table.benefits": "Avantages",
   "pricing.mostPopular": "Le plus populaire",
   "plans.free.name": "Gratuit",
   "plans.free.credits": "500 crédits/mois",
@@ -103,5 +100,23 @@ export default {
   "blog.posts.post2.title": "Percer les Secrets d'un Scénario Réussi",
   "blog.posts.post2.description": "Une plongée profonde dans les structures narratives qui captivent le public.",
   "blog.posts.post3.title": "Trouver Votre Voix Unique en tant qu'Écrivain",
-  "blog.posts.post3.description": "Conseils et exercices pour développer un style d'écriture distinct et authentique."
+  "blog.posts.post3.description": "Conseils et exercices pour développer un style d'écriture distinct et authentique.",
+
+  // Footer
+  "footer.initiative": "Une initiative de Group X AI Brasil. Développé au Brésil.",
+  "footer.navigate.title": "Naviguer",
+  "footer.navigate.features": "Fonctionnalités",
+  "footer.navigate.plans": "Plans",
+  "footer.partnerships.title": "Partenariats",
+  "footer.partnerships.content": "Devenir Partenaire de Contenu",
+  "footer.partnerships.print": "Devenir Partenaire d'Impression",
+  "footer.partnerships.education": "Pour les Établissements d'Enseignement",
+  "footer.legal.title": "Légal",
+  "footer.legal.terms": "Conditions d'Utilisation",
+  "footer.legal.privacy": "Politique de Confidentialité",
+  "footer.legal.printing": "Services d'Impression",
+  "footer.about.title": "À Propos",
+  "footer.about.about": "À Propos",
+  "footer.about.support": "Soutenir le Projet",
+  "footer.copyright": "© 2025 CineWrite X AI – Tous droits réservés."
 } as const;
