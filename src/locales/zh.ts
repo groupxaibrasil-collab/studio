@@ -65,6 +65,7 @@ export default {
   "pricing.table.plan": "计划",
   "pricing.table.value": "价值",
   "pricing.table.benefits": "好处",
+  "pricing.mostPopular": "最受欢迎的",
   "plans.free.name": "自由",
   "plans.free.credits": "500 积分/月",
   "plans.pro.name": "专业版",

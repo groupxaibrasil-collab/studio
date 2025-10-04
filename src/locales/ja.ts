@@ -65,6 +65,7 @@ export default {
   "pricing.table.plan": "プラン",
   "pricing.table.value": "価値",
   "pricing.table.benefits": "利点",
+  "pricing.mostPopular": "最も人気のある",
   "plans.free.name": "無料",
   "plans.free.credits": "500クレジット/月",
   "plans.pro.name": "プロ",

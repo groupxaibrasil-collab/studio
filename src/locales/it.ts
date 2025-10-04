@@ -65,6 +65,7 @@ export default {
   "pricing.table.plan": "Piano",
   "pricing.table.value": "Valore",
   "pricing.table.benefits": "Benefici",
+  "pricing.mostPopular": "Più popolare",
   "plans.free.name": "Gratuito",
   "plans.free.credits": "500 crediti/mese",
   "plans.pro.name": "Pro",

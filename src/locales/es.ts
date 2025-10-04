@@ -65,6 +65,7 @@ export default {
   "pricing.table.plan": "Plan",
   "pricing.table.value": "Valor",
   "pricing.table.benefits": "Beneficios",
+  "pricing.mostPopular": "Más Popular",
   "plans.free.name": "Gratis",
   "plans.free.credits": "500 créditos/mes",
   "plans.pro.name": "Pro",

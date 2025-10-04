@@ -17,7 +17,7 @@ import {
 } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import {
   Table,
   TableBody,
@@ -29,6 +29,8 @@ import {
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { Badge } from '@/components/ui/badge';
+import { cn } from '@/lib/utils';
 
 const blogPosts = PlaceHolderImages.filter(img => img.id.includes('blog-post')).slice(0, 3);
 
@@ -100,12 +102,42 @@ export default async function Home() {
   ];
 
   const plans = [
-    { name: t('plans.free.name'), price: '$0', credits: t('plans.free.credits') },
-    { name: t('plans.pro.name'), price: '$9', credits: t('plans.pro.credits') },
-    { name: t('plans.premium.name'), price: '$19', credits: t('plans.premium.credits') },
-    { name: t('plans.master.name'), price: '$39', credits: t('plans.master.credits') },
-    { name: t('plans.enterprise.name'), price: t('plans.enterprise.price'), credits: t('plans.enterprise.credits') },
-    { name: t('plans.enterpriseVip.name'), price: t('plans.enterpriseVip.price'), credits: t('plans.enterpriseVip.credits') },
+    {
+      name: t('plans.free.name'),
+      price: '$0',
+      credits: t('plans.free.credits'),
+      popular: false,
+    },
+    {
+      name: t('plans.pro.name'),
+      price: '$9',
+      credits: t('plans.pro.credits'),
+      popular: false,
+    },
+    {
+      name: t('plans.premium.name'),
+      price: '$19',
+      credits: t('plans.premium.credits'),
+      popular: true,
+    },
+    {
+      name: t('plans.master.name'),
+      price: '$39',
+      credits: t('plans.master.credits'),
+      popular: false,
+    },
+    {
+      name: t('plans.enterprise.name'),
+      price: t('plans.enterprise.price'),
+      credits: t('plans.enterprise.credits'),
+      popular: false,
+    },
+    {
+      name: t('plans.enterpriseVip.name'),
+      price: t('plans.enterpriseVip.price'),
+      credits: t('plans.enterpriseVip.credits'),
+      popular: false,
+    },
   ];
 
   const securityFeatures = [
@@ -294,25 +326,26 @@ export default async function Home() {
                 {t('pricing.subtitle')}
               </p>
             </div>
-            <div className="mt-16 overflow-x-auto">
-              <Table className="min-w-full">
-                <TableHeader>
-                  <TableRow>
-                    <TableHead className="w-1/4 font-headline text-lg">{t('pricing.table.plan')}</TableHead>
-                    <TableHead className="w-1/4 font-headline text-lg">{t('pricing.table.value')}</TableHead>
-                    <TableHead className="w-1/2 font-headline text-lg">{t('pricing.table.benefits')}</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {plans.map((plan) => (
-                    <TableRow key={plan.name}>
-                      <TableCell className="font-medium">{plan.name}</TableCell>
-                      <TableCell>{plan.price}</TableCell>
-                      <TableCell>{plan.credits}</TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
+            <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 sm:grid-cols-2 lg:max-w-none lg:grid-cols-3">
+              {plans.map((plan) => (
+                <Card key={plan.name} className={cn("relative flex flex-col", plan.popular && "border-primary shadow-lg")}>
+                  {plan.popular && (
+                    <Badge variant="default" className="absolute -top-4 left-1/2 -translate-x-1/2">
+                      {t('pricing.mostPopular')}
+                    </Badge>
+                  )}
+                  <CardHeader className="text-center">
+                    <CardTitle className="font-headline text-2xl">{plan.name}</CardTitle>
+                    <CardDescription className="text-4xl font-bold text-foreground">{plan.price}<span className="text-sm font-normal text-muted-foreground">/month</span></CardDescription>
+                  </CardHeader>
+                  <CardContent className="flex flex-1 flex-col justify-between">
+                    <p className="text-center text-muted-foreground">{plan.credits}</p>
+                    <Button className="mt-6 w-full" variant={plan.popular ? 'default' : 'secondary'}>
+                      {t('header.get-started')}
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </section>
