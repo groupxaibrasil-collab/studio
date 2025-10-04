@@ -11,12 +11,12 @@ export const metadata: Metadata = {
     'A plataforma definitiva para escritores, roteiristas e quadrinistas. Uma plataforma inteligente criada para escritores, roteiristas e quadrinistas.',
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const locale = getCurrentLocale();
+  const locale = await getCurrentLocale();
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>
