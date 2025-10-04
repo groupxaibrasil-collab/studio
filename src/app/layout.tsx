@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { ThemeProvider } from '@/components/theme-provider';
-import { I18nProviderClient } from '@/locales/client';
-import { getCurrentLocale } from '@/locales/index.server';
 
 export const metadata: Metadata = {
   title: 'CineWrite AI',
@@ -11,14 +9,13 @@ export const metadata: Metadata = {
     'A plataforma definitiva para escritores, roteiristas e quadrinistas. Uma plataforma inteligente criada para escritores, roteiristas e quadrinistas.',
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const locale = await getCurrentLocale();
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -38,9 +35,7 @@ export default async function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <I18nProviderClient locale={locale}>
-            {children}
-          </I18nProviderClient>
+          {children}
           <Toaster />
         </ThemeProvider>
       </body>
