@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import {
   Avatar,
   AvatarFallback,
@@ -29,6 +29,8 @@ import {
     Settings,
     Sparkles,
 } from 'lucide-react';
+import { useAuth, useUser } from '@/firebase';
+import { signOut } from 'firebase/auth';
 
 const menuItems = [
     { href: '/dashboard/chapter-generator', label: 'Chapter Generator', icon: <Sparkles /> },
@@ -40,6 +42,23 @@ const menuItems = [
 
 export function UserSidebar() {
   const pathname = usePathname();
+  const { user } = useUser();
+  const auth = useAuth();
+  const router = useRouter();
+
+  const handleLogout = async () => {
+    await signOut(auth);
+    router.push('/');
+  };
+
+  const getInitials = (name?: string | null) => {
+    if (!name) return '';
+    const names = name.split(' ');
+    if (names.length > 1) {
+      return `${names[0][0]}${names[names.length - 1][0]}`;
+    }
+    return names[0].substring(0, 2);
+  }
 
   return (
     <Sidebar>
@@ -74,17 +93,19 @@ export function UserSidebar() {
 
       <SidebarFooter>
         <div className="flex flex-col gap-2">
-            <div className='flex flex-row items-center gap-2 p-2 rounded-md bg-sidebar-accent/50 group-data-[collapsible=icon]:p-0 group-data-[collapsible=icon]:bg-transparent group-data-[collapsible=icon]:justify-center'>
-                 <Avatar className="h-8 w-8 group-data-[collapsible=icon]:h-10 group-data-[collapsible=icon]:w-10">
-                    <AvatarImage src="https://picsum.photos/seed/101/100/100" alt="Leandro Martins" />
-                    <AvatarFallback>LM</AvatarFallback>
-                </Avatar>
-                <div className="flex-1 group-data-[collapsible=icon]:hidden">
-                    <p className="text-sm font-semibold text-sidebar-foreground">Leandro Martins</p>
-                    <p className="text-xs text-sidebar-foreground/70">Pro Plan - 3,450 credits</p>
-                </div>
-                <Button variant="ghost" size="icon" className="h-8 w-8 group-data-[collapsible=icon]:hidden"><ChevronUp /></Button>
-            </div>
+            {user && (
+              <div className='flex flex-row items-center gap-2 p-2 rounded-md bg-sidebar-accent/50 group-data-[collapsible=icon]:p-0 group-data-[collapsible=icon]:bg-transparent group-data-[collapsible=icon]:justify-center'>
+                  <Avatar className="h-8 w-8 group-data-[collapsible=icon]:h-10 group-data-[collapsible=icon]:w-10">
+                      <AvatarImage src={user.photoURL || `https://avatar.vercel.sh/${user.uid}.png`} alt={user.displayName || 'User'} />
+                      <AvatarFallback>{getInitials(user.displayName)}</AvatarFallback>
+                  </Avatar>
+                  <div className="flex-1 group-data-[collapsible=icon]:hidden">
+                      <p className="text-sm font-semibold text-sidebar-foreground">{user.displayName}</p>
+                      <p className="text-xs text-sidebar-foreground/70">Pro Plan - 3,450 credits</p>
+                  </div>
+                  <Button variant="ghost" size="icon" className="h-8 w-8 group-data-[collapsible=icon]:hidden"><ChevronUp /></Button>
+              </div>
+            )}
           
             <SidebarMenu>
                 <SidebarMenuItem>
@@ -96,11 +117,9 @@ export function UserSidebar() {
                 </SidebarMenuButton>
                 </SidebarMenuItem>
                 <SidebarMenuItem>
-                <SidebarMenuButton asChild tooltip="Logout">
-                    <Link href="/">
+                <SidebarMenuButton onClick={handleLogout} tooltip="Logout">
                     <LogOut />
                     <span>Logout</span>
-                    </Link>
                 </SidebarMenuButton>
                 </SidebarMenuItem>
             </SidebarMenu>

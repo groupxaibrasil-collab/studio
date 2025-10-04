@@ -1,4 +1,5 @@
 import { I18nProviderClient } from '@/locales/client';
+import { FirebaseClientProvider } from '@/firebase/client-provider';
 
 export default function LocaleLayout({
   children,
@@ -9,7 +10,9 @@ export default function LocaleLayout({
 }) {
   return (
     <I18nProviderClient locale={locale}>
-      {children}
+      <FirebaseClientProvider>
+        {children}
+      </FirebaseClientProvider>
     </I18nProviderClient>
   );
 }
